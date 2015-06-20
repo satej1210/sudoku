@@ -46,7 +46,7 @@ public:
     
     
 }sudoku[9][9];
-void GetPuz()//Not Completed
+void GetPuz()//Completed
 {
     fstream file("puzzle.txt");
     //cell puzzle[9][9];
