@@ -110,6 +110,63 @@ void CheckRow(int r)
 }
 
 
+void CheckColumn(int c)
+{
+    
+    for(int i=1; i<=9; i++)
+    {
+        for(int j=1; j<=9; j++)
+        {
+            if(sudoku[j-1][c-1].GetState()==i)
+            {
+                for(int k=0; k<9; k++)
+                    sudoku[k][c-1].possibilities[i-1]=false;
+                break;
+            }
+        }
+        
+    }
+}
+
+void CheckBox(int x)
+{
+    int a, b;
+    switch (x)
+    {
+        case 1:
+            a=1, b=1;
+            break;
+        case 2:
+            a=1, b=4;
+            break;
+        case 3:
+            a=1; b=7;
+            break;
+        case 4:
+            a=4, b=1;
+            break;
+        case 5:
+            a=4, b=4;
+            break;
+        case 6:
+            a=4, b=7;
+            break;
+        case 7:
+            a=7, b=1;
+            break;
+        case 8:
+            a=7, b=4;
+            break;
+        case 9:
+            a=7, b=7;
+            break;
+    }
+    
+    
+    
+    
+}
+
 
 int main()
 {
@@ -148,6 +205,17 @@ int main()
     DrawGrid();
     
     CheckRow(1);
+    DrawGrid();
+    
+    CheckColumn(1);
+    DrawGrid();
+    
+    for(int i=1; i<=9; i++)
+    {
+        CheckRow(i);
+        CheckColumn(i);
+    }
+    
     DrawGrid();
 }
 
