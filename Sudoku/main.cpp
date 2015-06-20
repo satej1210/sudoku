@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #define i(a,b,c) sudoku[a-1][b-1].ChangeState(c)
 using namespace std;
 
@@ -45,10 +46,27 @@ public:
     
     
 }sudoku[9][9];
-void GetPuz()
+void GetPuz()//Not Completed
 {
-    
+    fstream file("puzzle.txt");
+    //cell puzzle[9][9];
+    char temp[10];
+    int CurRow=0;
+    while(!file.eof())
+    {
+        file.getline(temp, 10);
+        for (int i=0; i<9; i++) {
+            if (temp[i]!=48) {
+                sudoku[CurRow][i].ChangeState(int(temp[i]-48));
+            }
+            else
+                sudoku[CurRow][i].is_filled=false;
+        }
+        CurRow++;
+    }
 }
+
+
 void DrawGrid()         //only to draw the grid
 {
     
@@ -223,7 +241,10 @@ int main()
     
     
     {
-        i(1,2,8);
+        //i(1,2,8);
+
+   /* {i(1,2,8);
+>>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
         i(1,7,2);
         i(2,5,8);
         i(2,6,4);
@@ -250,13 +271,19 @@ int main()
         i(8,4,7);
         i(8,5,1);
         i(9,3,8);
+
         i(9,8,4);
         i(1,8,7);
     } //creating a sample puzzle
     
+=======
+        i(9,8,4);} //creating a sample puzzle
+
+>>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
     DrawGrid();
-    
-    CheckRow(1);
+    */ //Commented out cause getting from file
+    GetPuz();
+   CheckRow(1);
     DrawGrid();
     
     CheckColumn(1);
@@ -268,6 +295,7 @@ int main()
         CheckColumn(i);
         
     }
+
     
     for(int i=0; i<9; i++)
     {
@@ -280,6 +308,10 @@ int main()
     DrawGrid();
     
     CheckAllSingles();
-    DrawGrid();
-}
 
+
+
+    DrawGrid();
+
+}
+}
