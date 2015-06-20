@@ -47,7 +47,7 @@ public:
 }sudoku[9][9];
 void GetPuz()
 {
-    asd
+    
 }
 void DrawGrid()         //only to draw the grid
 {
@@ -130,10 +130,10 @@ void CheckColumn(int c)
     }
 }
 
-void CheckBox(int x)
+void CheckBox(int x, int y)
 {
     int a, b;
-    switch (x)
+    /*switch (x)
     {
         case 1:
             a=1, b=1;
@@ -162,18 +162,20 @@ void CheckBox(int x)
         case 9:
             a=7, b=7;
             break;
-    }
+    }*/
+    a=x/3 * 3;
+    b=y/3 * 3;
     
     for(int i=1; i<=9; i++)
     {
-        for(int j=a-1; j<=a+1; j++)
+        for(int j=a; j<=a+2; j++)
         {
-            for(int m=b-1; m<=b+1; m++)
+            for(int m=b; m<=b+2; m++)
             {
                 if(sudoku[j][m].GetState()==i)
                 {
-                    for(int k=a-1; k<a+1; k++)
-                        for(int l=b-1; l<b+1; l++)
+                    for(int k=a; k<a+2; k++)
+                        for(int l=b; l<b+2; l++)
                             sudoku[k][l].possibilities[i-1]=false;
                     break;
                 }
@@ -186,13 +188,42 @@ void CheckBox(int x)
     
 }
 
+void CheckAllSingles()
+{
+    for(int i=0; i<9; i++)
+    {
+        for(int j=0; j<9; j++)
+        {
+            int flag = -1;
+            int store = -1;
+            for(int k=0; k<9; k++)
+            {
+                if(sudoku[i][j].possibilities[k]==true)
+                {
+                    flag++;
+                    store = k;
+                }
+            }
+            if(flag==0)
+            {
+                sudoku[i][j].ChangeState(store+1);
+                CheckRow(i);
+                CheckColumn(j);
+                CheckBox(i, j);
+                
+                
+            }
+        }
+    }
+}
 
 int main()
 {
     DrawGrid();
     
     
-    {i(1,2,8);
+    {
+        i(1,2,8);
         i(1,7,2);
         i(2,5,8);
         i(2,6,4);
@@ -219,7 +250,9 @@ int main()
         i(8,4,7);
         i(8,5,1);
         i(9,3,8);
-        i(9,8,4);} //creating a sample puzzle
+        i(9,8,4);
+        i(1,8,7);
+    } //creating a sample puzzle
     
     DrawGrid();
     
@@ -233,9 +266,20 @@ int main()
     {
         CheckRow(i);
         CheckColumn(i);
-        CheckBox(i);
+        
     }
     
+    for(int i=0; i<9; i++)
+    {
+        for(int j=0; j<9; j++)
+        {
+            CheckBox(i, j);
+        }
+    }
+    
+    DrawGrid();
+    
+    CheckAllSingles();
     DrawGrid();
 }
 
