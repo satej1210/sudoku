@@ -48,6 +48,7 @@ public:
 
 void DrawGrid()         //only to draw the grid
 {
+    
     cout<<" --- --- --- --- --- --- --- --- ---\n";
     for(int i=0; i<9; i++)
     {
@@ -56,10 +57,11 @@ void DrawGrid()         //only to draw the grid
             for(int j=0; j<9; j++)
             {
                 cout<<"|";
-                if(sudoku[i][j].is_filled && sudoku[i][j].printed==false)
+                if(sudoku[i][j].is_filled && m==0)             //sudoku[i][j].printed==false)
                 {
                     cout<<"\'"<<sudoku[i][j].GetState()<<"\'";
-                    sudoku[i][j].printed=true;
+                    
+                    //sudoku[i][j].printed=true;
                 }
                 
                 
@@ -87,6 +89,24 @@ void DrawGrid()         //only to draw the grid
     
     cout<<"\n\n\n\n\n\n\n\n\n\n\n";
     
+}
+
+void CheckRow(int r)
+{
+    
+    for(int i=1; i<=9; i++)
+    {
+        for(int j=1; j<=9; j++)
+        {
+            if(sudoku[r-1][j-1].GetState()==i)
+            {
+                for(int k=0; k<9; k++)
+                    sudoku[r-1][k].possibilities[i-1]=false;
+                break;
+            }
+        }
+    
+    }
 }
 
 
@@ -125,6 +145,9 @@ int main()
         i(9,3,8);
         i(9,8,4);} //creating a sample puzzle
     
+    DrawGrid();
+    
+    CheckRow(1);
     DrawGrid();
 }
 
