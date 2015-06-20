@@ -109,7 +109,6 @@ void CheckRow(int r)
     }
 }
 
-
 void CheckColumn(int c)
 {
     
