@@ -13,18 +13,15 @@ using namespace std;
 
 class cell
 {
-    
     int state = 0;
     int box_number;
     
-    
 public:
-    
     bool is_filled = false;
     bool possibilities[9] = {true, true, true, true, true, true, true, true, true};
     bool printed = false;
     
-    void ChangeState(int x)
+    void ChangeState(int x) //changes the state of the cell and deletes all possibilities
     {
         state = x;
         is_filled = true;
@@ -34,29 +31,25 @@ public:
         }
     }
     
-    bool GetPossibilities()
-    {
-        return possibilities;
-    }
-    
-    int GetState()
+    int GetState() //gets the private variable state
     {
         return state;
     }
     
-    
 }sudoku[9][9];
-void GetPuz()//Completed
+
+void GetPuz()//Reads the sudoku from a file
 {
     fstream file("puzzle.txt");
-    //cell puzzle[9][9];
     char temp[10];
     int CurRow=0;
     while(!file.eof())
     {
         file.getline(temp, 10);
-        for (int i=0; i<9; i++) {
-            if (temp[i]!=48) {
+        for (int i=0; i<9; i++)
+        {
+            if (temp[i]!=48)
+            {
                 sudoku[CurRow][i].ChangeState(int(temp[i]-48));
             }
             else
@@ -66,10 +59,8 @@ void GetPuz()//Completed
     }
 }
 
-
-void DrawGrid()         //only to draw the grid
+void DrawGrid()
 {
-    
     cout<<" --- --- --- --- --- --- --- --- ---\n";
     for(int i=0; i<9; i++)
     {
@@ -78,11 +69,9 @@ void DrawGrid()         //only to draw the grid
             for(int j=0; j<9; j++)
             {
                 cout<<"|";
-                if(sudoku[i][j].is_filled && m==0)             //sudoku[i][j].printed==false)
+                if(sudoku[i][j].is_filled && m==0)
                 {
                     cout<<"\'"<<sudoku[i][j].GetState()<<"\'";
-                    
-                    //sudoku[i][j].printed=true;
                 }
                 
                 
@@ -112,7 +101,7 @@ void DrawGrid()         //only to draw the grid
     
 }
 
-void CheckRow(int r)
+void CheckRow(int r) //actual row number. NOT INDEX.
 {
     
     for(int i=1; i<=9; i++)
@@ -130,7 +119,7 @@ void CheckRow(int r)
     }
 }
 
-void CheckColumn(int c)
+void CheckColumn(int c) //actual column number. NOT INDEX.
 {
     
     for(int i=1; i<=9; i++)
@@ -148,65 +137,24 @@ void CheckColumn(int c)
     }
 }
 
-void CheckBox(int x, int y)
+void CheckBox(int x, int y) //super optimal. x and y are index numbers
 {
     int a, b;
-    /*switch (x)
-    {
-        case 1:
-            a=1, b=1;
-            break;
-        case 2:
-            a=1, b=4;
-            break;
-        case 3:
-            a=1; b=7;
-            break;
-        case 4:
-            a=4, b=1;
-            break;
-        case 5:
-            a=4, b=4;
-            break;
-        case 6:
-            a=4, b=7;
-            break;
-        case 7:
-            a=7, b=1;
-            break;
-        case 8:
-            a=7, b=4;
-            break;
-        case 9:
-            a=7, b=7;
-            break;
-    }*/
     a=x/3 * 3;
     b=y/3 * 3;
-    
-    for(int i=1; i<=9; i++)
+    if(sudoku[x][y].is_filled==true)
     {
-        for(int j=a; j<=a+2; j++)
+        for(int i=a; i<=a+2; i++)
         {
-            for(int m=b; m<=b+2; m++)
+            for(int j=b; j<=b+2; j++)
             {
-                if(sudoku[j][m].GetState()==i)
-                {
-                    for(int k=a; k<a+2; k++)
-                        for(int l=b; l<b+2; l++)
-                            sudoku[k][l].possibilities[i-1]=false;
-                    break;
-                }
+                sudoku[i][j].possibilities[sudoku[x][y].GetState()-1] = false;
             }
         }
-        
     }
-    
-    
-    
 }
 
-void CheckAllSingles()
+void CheckAllSingles() //checks for any singles and marks them off!
 {
     for(int i=0; i<9; i++)
     {
@@ -216,86 +164,30 @@ void CheckAllSingles()
             int store = -1;
             for(int k=0; k<9; k++)
             {
-                if(sudoku[i][j].possibilities[k]==true)
+                if(sudoku[i][j].possibilities[k]==true) //to get flag and store
                 {
                     flag++;
                     store = k;
                 }
             }
-            if(flag==0)
+            if(flag==0)             //if it is a single, change the state and check the row, column and boxes off.
             {
                 sudoku[i][j].ChangeState(store+1);
                 CheckRow(i);
                 CheckColumn(j);
                 CheckBox(i, j);
-                
-                
             }
         }
     }
 }
 
-int main()
+void CheckAll() //checks all rows, columns and boxes off. used once in the beginning. Ideally not reqd again.
 {
-    DrawGrid();
-    
-    
-    {
-        //i(1,2,8);
-
-   /* {i(1,2,8);
->>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
-        i(1,7,2);
-        i(2,5,8);
-        i(2,6,4);
-        i(2,8,9);
-        i(3,3,6);
-        i(3,4,3);
-        i(3,5,2);
-        i(3,8,1);
-        i(4,2,9);
-        i(4,3,7);
-        i(4,8,8);
-        i(5,1,8);
-        i(5,4,9);
-        i(5,6,3);
-        i(5,9,2);
-        i(6,2,1);
-        i(6,7,9);
-        i(6,8,5);
-        i(7,2,7);
-        i(7,5,4);
-        i(7,6,5);
-        i(7,7,8);
-        i(8,2,3);
-        i(8,4,7);
-        i(8,5,1);
-        i(9,3,8);
-
-        i(9,8,4);
-        i(1,8,7);
-    } //creating a sample puzzle
-    
-=======
-        i(9,8,4);} //creating a sample puzzle
-
->>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
-    DrawGrid();
-    */ //Commented out cause getting from file
-    GetPuz();
-   CheckRow(1);
-    DrawGrid();
-    
-    CheckColumn(1);
-    DrawGrid();
-    
     for(int i=1; i<=9; i++)
     {
         CheckRow(i);
         CheckColumn(i);
-        
     }
-
     
     for(int i=0; i<9; i++)
     {
@@ -304,14 +196,21 @@ int main()
             CheckBox(i, j);
         }
     }
-    
-    DrawGrid();
-    
-    CheckAllSingles();
-
-
-
-    DrawGrid();
 
 }
+
+int main()
+{
+    DrawGrid();
+    GetPuz();
+    {
+        CheckAll();
+        DrawGrid();
+        
+        for(int i=0; i<10; i++)
+        {
+            CheckAllSingles();
+            DrawGrid();
+        }
+    }
 }
