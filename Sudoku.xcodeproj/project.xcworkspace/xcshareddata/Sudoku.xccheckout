@@ -10,31 +10,31 @@
 	<string>Sudoku</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>46F7F8AF-F03E-4298-8A8B-EA6837831CD5</key>
+		<key>96AA2BA60C55DF846FAC5B06EE83D11CA8CE2B9A</key>
 		<string>https://github.com/mudit2103/sudoku.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Sudoku.xcodeproj/project.xcworkspace</string>
+	<string>Sudoku.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>46F7F8AF-F03E-4298-8A8B-EA6837831CD5</key>
+		<key>96AA2BA60C55DF846FAC5B06EE83D11CA8CE2B9A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mudit2103/sudoku.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>46F7F8AF-F03E-4298-8A8B-EA6837831CD5</string>
+	<string>96AA2BA60C55DF846FAC5B06EE83D11CA8CE2B9A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>46F7F8AF-F03E-4298-8A8B-EA6837831CD5</string>
+			<string>96AA2BA60C55DF846FAC5B06EE83D11CA8CE2B9A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Sudoku</string>
+			<string>sudoku</string>
 		</dict>
 	</array>
 </dict>
