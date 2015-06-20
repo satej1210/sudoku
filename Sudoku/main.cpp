@@ -45,7 +45,10 @@ public:
     
     
 }sudoku[9][9];
-
+void GetPuz()
+{
+    
+}
 void DrawGrid()         //only to draw the grid
 {
     
