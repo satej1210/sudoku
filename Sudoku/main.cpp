@@ -283,7 +283,7 @@ int main()
     DrawGrid();
     */ //Commented out cause getting from file
     GetPuz();
-   CheckRow(1);
+   CheckRow(7);
     DrawGrid();
     
     CheckColumn(1);
@@ -308,7 +308,7 @@ int main()
     DrawGrid();
     
     CheckAllSingles();
-
+        
 
 
     DrawGrid();
