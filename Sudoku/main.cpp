@@ -154,6 +154,24 @@ void CheckBox(int x, int y) //super optimal. x and y are index numbers
     }
 }
 
+void CheckAll() //checks all rows, columns and boxes off. used once in the beginning. Ideally not reqd again.
+{
+    for(int i=1; i<=9; i++)
+    {
+        CheckRow(i);
+        CheckColumn(i);
+    }
+    
+    for(int i=0; i<9; i++)
+    {
+        for(int j=0; j<9; j++)
+        {
+            CheckBox(i, j);
+        }
+    }
+    
+}
+
 void CheckAllSingles() //checks for any singles and marks them off!
 {
     for(int i=0; i<9; i++)
@@ -173,36 +191,19 @@ void CheckAllSingles() //checks for any singles and marks them off!
             if(flag==0)             //if it is a single, change the state and check the row, column and boxes off.
             {
                 sudoku[i][j].ChangeState(store+1);
-                CheckRow(i);
-                CheckColumn(j);
+                CheckRow(i+1);
+                CheckColumn(j+1);
                 CheckBox(i, j);
             }
         }
     }
 }
 
-void CheckAll() //checks all rows, columns and boxes off. used once in the beginning. Ideally not reqd again.
-{
-    for(int i=1; i<=9; i++)
-    {
-        CheckRow(i);
-        CheckColumn(i);
-    }
-    
-    for(int i=0; i<9; i++)
-    {
-        for(int j=0; j<9; j++)
-        {
-            CheckBox(i, j);
-        }
-    }
-
-}
-
 int main()
 {
     DrawGrid();
     GetPuz();
+    
     {
         CheckAll();
         DrawGrid();
@@ -213,4 +214,5 @@ int main()
             DrawGrid();
         }
     }
+    DrawGrid();
 }
