@@ -182,6 +182,37 @@ void GetPuz()//Reads the sudoku from a file
         CurRow++;
     }
 }
+void ColumnHiddenSingles(int i)
+{
+    int no=0;
+
+    int flag=0;
+    for (int j=1; j<=9; j++)
+    {
+        flag=0;
+        //if(!(sudoku[i][k].is_filled))
+        // {
+        for (int k=0; k<9; k++)
+        {
+            if (sudoku[k][i].possibilities[j-1]==true)
+            {
+
+                flag++;
+                no=k;
+
+            }
+
+        }
+        //  }
+        if (flag==1)
+        {
+            sudoku[no][i].ChangeState(j);
+
+        }
+    }
+    
+    
+}
 void RowHiddenSingles(int i)
 {
     int no=0;
@@ -219,7 +250,10 @@ void HiddenSingles()
     {
         RowHiddenSingles(i);
     }
-
+    for (int i=0; i<9; i++)
+    {
+        //ColumnHiddenSingles(i);
+    }
     // ColumnHiddenSingles();
     // BoxHiddenSingles();
 }
@@ -486,7 +520,7 @@ int main()
     HiddenSingles();
 
     DrawGrid();
-    lockedcandidate::f11(6,3);
+    //lockedcandidate::f11(6,3);
 
     DrawGrid();
 }
