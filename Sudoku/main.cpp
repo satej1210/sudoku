@@ -285,13 +285,13 @@ void HiddenSingles()
 {
     for (int i=0; i<9; i++)
     {
-        // RowHiddenSingles(i);
+        RowHiddenSingles(i);
     }
     
     
     for (int i=0; i<9; i++)
     {
-        //ColumnHiddenSingles(i);
+        ColumnHiddenSingles(i);
     }
     for (int i=0; i<9; i+=3) {
         for (int j=0; j<9; j+=3) {
