@@ -252,26 +252,51 @@ void RowHiddenSingles(int i)
     
 }
 
-/*void BoxHiddenSingles(int x, int y)
+void BoxHiddenSingles(int x, int y)
 {
-    for (int i=0; i<9; i+=3) {
-        for (int j=9; <#condition#>; <#increment#>) {
-            <#statements#>
+    int flag=0;
+    int h=0, l=0;
+    for (int k=1; k<=9; k++)
+    {
+        flag=0;
+        for (int i=x; i<x+3; i++)
+        {
+
+            for (int j=y; j<y+3; j++)
+            {
+                if (sudoku[i][j].possibilities[k-1]==true&&sudoku[i][j].GetState()==0) {
+                    flag++;
+                    h=j;
+                    l=i;
+                }
+            }
+        }
+        if (flag==1) {
+            //cout << ".." << h << ".. " << k << " >> " << "Single\n\n";
+            sudoku[l][h].ChangeState(k);
+            CheckAll();
+
+
         }
     }
-}*/
+}
 
 void HiddenSingles()
 {
     for (int i=0; i<9; i++)
     {
-        RowHiddenSingles(i);
+        // RowHiddenSingles(i);
     }
     
     
     for (int i=0; i<9; i++)
     {
-        ColumnHiddenSingles(i);
+        //ColumnHiddenSingles(i);
+    }
+    for (int i=0; i<9; i+=3) {
+        for (int j=0; j<9; j+=3) {
+            BoxHiddenSingles(i, j);
+        }
     }
 }
 
@@ -438,12 +463,16 @@ int main()
 {
     DrawGrid();
     GetPuz();
+    CheckAll();
 
     
     DrawGrid();
-    for(int i=0; i<1000; i++)
+    HiddenSingles();
+    DrawGrid();
+
+    /*for(int i=0; i<1000; i++)
     {
-        HiddenSingles();
+        //HiddenSingles();
         CheckAll();
         CheckAllSingles();
         CheckAll();
@@ -451,7 +480,7 @@ int main()
         lockedcandidate::both();
         CheckAll();
         
-    }
+    }*/
     
 
     

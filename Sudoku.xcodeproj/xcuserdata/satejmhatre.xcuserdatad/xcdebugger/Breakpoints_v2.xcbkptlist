@@ -59,12 +59,12 @@
             condition = "i=0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456597017.409413"
+            timestampString = "456603595.705136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "385"
-            endingLineNumber = "385"
-            landmarkName = "CheckAllSingles()"
+            startingLineNumber = "411"
+            endingLineNumber = "411"
+            landmarkName = "CheckAll()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
