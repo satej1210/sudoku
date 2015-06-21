@@ -11,6 +11,14 @@
 #define i(a,b,c) sudoku[a-1][b-1].ChangeState(c)
 using namespace std;
 
+void GetPuz();
+void CheckRow(int r);
+void CheckColumn(int c);
+void CheckBox(int x, int y);
+void CheckAll();
+void CheckAllSingles();
+bool* ReturnBoxPossibilities(int x, int i, int j);
+
 class cell
 {
     int state = 0;
@@ -38,9 +46,118 @@ public:
     
 }sudoku[9][9];
 
+
+
+
+
+class lockedcandidate
+{
+public:
+#define g(x) *(GetNumberArray+x)
+    void static f11(int i, int j)   //row in box
+    {
+        bool *GetNumberArray;
+        for(int x=1; x<=9; x++)
+        {
+            GetNumberArray = ReturnBoxPossibilities(x, i, j);
+            
+            if(g(0)||g(1)||g(2))
+                if((g(3)||g(4)||g(5)||g(6)||g(7)||g(8))==false)
+                {
+                    for(int b=0; b<9; b++)
+                        {
+                            if(b<j||b>=j+3)
+                            sudoku[i][b].possibilities[x-1]=false;
+                        }
+                }
+            
+            if(g(3)||g(4)||g(5))
+                if((g(0)||g(1)||g(2)||g(6)||g(7)||g(8))==false)
+                {
+                    for(int b=0; b<9; b++)
+                    {
+                        if(b<j||b>=j+3)
+                        sudoku[i+1][b].possibilities[x-1]=false;
+                    }
+
+                }
+            if(g(6)||g(7)||g(8))
+                if((g(3)||g(4)||g(5)||g(0)||g(1)||g(2))==false)
+                {
+                    for(int b=0; b<9; b++)
+                    {
+                        if(b<j||b>=j+3)
+                        sudoku[i+2][b].possibilities[x-1]=false;
+                    }
+
+                }
+            
+            
+            
+        }
+    }
+    
+    void static f12(int i, int j) //column in box
+    {
+        bool *GetNumberArray;
+        for(int x=1; x<=9; x++)
+        {
+            GetNumberArray = ReturnBoxPossibilities(x, i, j);
+            
+            if(g(0)||g(3)||g(6))
+                if((g(1)||g(2)||g(4)||g(5)||g(7)||g(8))==false)
+                {
+                    for(int b=0; b<9; b++)
+                    {
+                        if(b<i||b>=i+3)
+                        sudoku[b][j].possibilities[x-1]=false;
+                    }
+
+                }
+            
+            if(g(1)||g(4)||g(7))
+                if((g(0)||g(2)||g(3)||g(5)||g(6)||g(8))==false)
+                {
+                    for(int b=0; b<9; b++)
+                    {
+                        if(b<i||b>=i+3)
+                        sudoku[b][j+1].possibilities[x-1]=false;
+                    }
+                }
+            if(g(2)||g(5)||g(8))
+                if((g(0)||g(1)||g(3)||g(4)||g(6)||g(7))==false)
+                {
+                    for(int b=0; b<9; b++)
+                    {
+                        if(b<i||b>=i+3)
+                        sudoku[b][j+2].possibilities[x-1]=false;
+                    }
+                }
+            
+            
+            
+        }
+
+    }
+    
+    void static both()
+    {
+      
+        
+       /* for(int i=0; i<9; i+=3)
+            for(int j=0; j<9; j+=3)
+                f11(i,j);
+        
+       // f12();*/
+    }
+    
+};
+
+
+
 void GetPuz()//Reads the sudoku from a file
 {
-    fstream file("puzzle.txt");
+    fstream file("lc1.txt");
     char temp[10];
     int CurRow=0;
     while(!file.eof())
@@ -199,6 +316,36 @@ void CheckAllSingles() //checks for any singles and marks them off!
     }
 }
 
+bool* ReturnBoxPossibilities(int x, int i, int j)
+{
+    bool PossibleNumberArray[9];
+    
+    int counter=0;
+    
+    for(int a=i; a<=i+2; a++)
+    {
+        for(int b=j; b<=j+2; b++)
+        {
+            if (sudoku[a][b].possibilities[x-1]==true)
+                PossibleNumberArray[counter]=true;
+            else
+                PossibleNumberArray[counter]=false;
+            counter++;
+            
+        }
+    }
+    
+    
+   /* for(int i=0; i<9; i++)
+    {
+        cout<<PossibleNumberArray+i;
+    }*/
+    
+    
+    return PossibleNumberArray;
+    
+}
+
 int main()
 {
     DrawGrid();
@@ -214,5 +361,8 @@ int main()
             DrawGrid();
         }
     }
+    DrawGrid();
+    lockedcandidate::f11(6,3);
+    
     DrawGrid();
 }
