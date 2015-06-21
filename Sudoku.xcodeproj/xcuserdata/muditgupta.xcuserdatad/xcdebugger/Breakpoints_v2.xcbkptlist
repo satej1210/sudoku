@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
-            landmarkName = "ColumnHiddenSingles(int i)"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "GetPuz()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -56,12 +56,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "ColumnHiddenSingles(int i)"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "GetPuz()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,13 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "ColumnHiddenSingles(int i)"
-            landmarkType = "7">
+            startingLineNumber = "198"
+            endingLineNumber = "198">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -118,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "ColumnHiddenSingles(int i)"
             landmarkType = "7">
          </BreakpointContent>
@@ -134,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "ColumnHiddenSingles(int i)"
             landmarkType = "7">
          </BreakpointContent>
@@ -150,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "ColumnHiddenSingles(int i)"
             landmarkType = "7">
          </BreakpointContent>
@@ -166,12 +164,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "ColumnHiddenSingles(int i)"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "GetPuz()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -212,12 +210,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "ColumnHiddenSingles(int i)"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "GetPuz()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -258,12 +256,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "ColumnHiddenSingles(int i)"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "GetPuz()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -304,11 +302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "ColumnHiddenSingles(int i)"
             landmarkType = "7">
          </BreakpointContent>
@@ -320,13 +318,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "class lockedcandidate"
-            landmarkType = "3">
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "both()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -336,11 +334,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "PuzzleCompleted()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sudoku/main.cpp"
+            timestampString = "456600276.827659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "GetPuz()"
             landmarkType = "7">
          </BreakpointContent>
@@ -352,11 +366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "GetPuz()"
             landmarkType = "7">
          </BreakpointContent>
@@ -368,12 +382,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "GetPuz()"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "CheckRow(int r)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -384,13 +398,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
-            landmarkName = "CheckBox(int x, int y)"
-            landmarkType = "7">
+            startingLineNumber = "257"
+            endingLineNumber = "257">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -400,13 +412,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "DrawGrid()"
-            landmarkType = "7">
+            startingLineNumber = "259"
+            endingLineNumber = "259">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -416,13 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
-            landmarkName = "DrawGrid()"
-            landmarkType = "7">
+            startingLineNumber = "261"
+            endingLineNumber = "261">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -432,13 +440,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
-            landmarkName = "DrawGrid()"
-            landmarkType = "7">
+            startingLineNumber = "262"
+            endingLineNumber = "262">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -448,59 +454,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
-            landmarkName = "DrawGrid()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
-            landmarkName = "DrawGrid()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
-            landmarkName = "DrawGrid()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "HiddenSingles()"
             landmarkType = "7">
          </BreakpointContent>
@@ -512,12 +470,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "HiddenSingles()"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "RowHiddenSingles(int i)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -528,43 +486,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "HiddenSingles()"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "RowHiddenSingles(int i)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CheckBox(int, int)"
-                  moduleName = "Sudoku"
-                  urlString = "file:///Users/muditgupta/Desktop/Sudoku/Sudoku/main.cpp"
-                  timestampString = "456532031.423662"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "148">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CheckBox(int, int)"
-                  moduleName = "Sudoku"
-                  urlString = "file:///Users/muditgupta/Desktop/Sudoku/Sudoku/main.cpp"
-                  timestampString = "456532031.423929"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "189"
-                  endingLineNumber = "189"
-                  offsetFromSymbolStart = "465">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -588,12 +516,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456596651.821972"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "ColumnHiddenSingles(int i)"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "GetPuz()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -604,75 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
+            timestampString = "456600276.827659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
-            landmarkName = "CheckAllSingles()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "481"
-            endingLineNumber = "481"
-            landmarkName = "main()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "Sudoku"
-                  urlString = "file:///Users/muditgupta/Desktop/Sudoku/Sudoku/main.cpp"
-                  timestampString = "456596136.042634"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "474"
-                  endingLineNumber = "474"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "main"
-                  moduleName = "Sudoku"
-                  urlString = "file:///Users/muditgupta/Desktop/Sudoku/Sudoku/main.cpp"
-                  timestampString = "456596136.042787"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "474"
-                  endingLineNumber = "474"
-                  offsetFromSymbolStart = "160">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "28"
-            continueAfterRunningActions = "No"
-            filePath = "Sudoku/main.cpp"
-            timestampString = "456598368.714879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
-            landmarkName = "main()"
-            landmarkType = "7">
+            startingLineNumber = "355"
+            endingLineNumber = "355">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
