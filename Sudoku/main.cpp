@@ -401,6 +401,8 @@ bool* ReturnBoxPossibilities(int x, int i, int j)
 
     }
 
+
+
 int main()
 {
     DrawGrid();
