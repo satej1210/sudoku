@@ -10,17 +10,17 @@
 #include <fstream>
 #define i(a,b,c) sudoku[a-1][b-1].ChangeState(c)
 using namespace std;
-
+void DrawGrid();
 class cell
 {
     int state = 0;
     int box_number;
-    
+
 public:
     bool is_filled = false;
     bool possibilities[9] = {true, true, true, true, true, true, true, true, true};
     bool printed = false;
-    
+
     void ChangeState(int x) //changes the state of the cell and deletes all possibilities
     {
         state = x;
@@ -30,12 +30,12 @@ public:
             possibilities[i] = false;
         }
     }
-    
+
     int GetState() //gets the private variable state
     {
         return state;
     }
-    
+
 }sudoku[9][9];
 
 void GetPuz()//Reads the sudoku from a file
@@ -58,7 +58,47 @@ void GetPuz()//Reads the sudoku from a file
         CurRow++;
     }
 }
+void RowHiddenSingles(int i)
+{
+    int no=0;
 
+    int flag=0;
+    for (int j=1; j<=9; j++)
+    {
+        flag=0;
+        //if(!(sudoku[i][k].is_filled))
+        // {
+            for (int k=0; k<9; k++)
+            {
+                if (sudoku[i][k].possibilities[j-1]==true)
+                {
+
+                    flag++;
+                    no=k;
+
+                }
+
+            }
+        //  }
+        if (flag==1)
+        {
+            sudoku[i][no].ChangeState(j);
+
+        }
+    }
+
+
+}
+void HiddenSingles()
+{
+    for (int i=0; i<9; i++)
+    {
+        RowHiddenSingles(i);
+    }
+
+    // ColumnHiddenSingles();
+    // BoxHiddenSingles();
+}
 void DrawGrid()
 {
     cout<<" --- --- --- --- --- --- --- --- ---\n";
@@ -73,8 +113,8 @@ void DrawGrid()
                 {
                     cout<<"\'"<<sudoku[i][j].GetState()<<"\'";
                 }
-                
-                
+
+
                 if(sudoku[i][j].possibilities[m*3+0]==true&&!sudoku[i][j].is_filled)
                     cout<<m*3+1;
                 else if(sudoku[i][j].is_filled==false||m!=0)
@@ -87,7 +127,7 @@ void DrawGrid()
                     cout<<m*3+3;
                 else if(sudoku[i][j].is_filled==false||m!=0)
                     cout<<" ";
-                
+
             }
             if(m==0)
                 cout<<"\b\b\b|\n";
@@ -96,14 +136,14 @@ void DrawGrid()
         }
         cout<<" --- --- --- --- --- --- --- --- ---\n";
     }
-    
+
     cout<<"\n\n\n\n\n\n\n\n\n\n\n";
-    
+
 }
 
 void CheckRow(int r) //actual row number. NOT INDEX.
 {
-    
+
     for(int i=1; i<=9; i++)
     {
         for(int j=1; j<=9; j++)
@@ -115,13 +155,13 @@ void CheckRow(int r) //actual row number. NOT INDEX.
                 break;
             }
         }
-        
+
     }
 }
 
 void CheckColumn(int c) //actual column number. NOT INDEX.
 {
-    
+
     for(int i=1; i<=9; i++)
     {
         for(int j=1; j<=9; j++)
@@ -133,7 +173,7 @@ void CheckColumn(int c) //actual column number. NOT INDEX.
                 break;
             }
         }
-        
+
     }
 }
 
@@ -184,78 +224,78 @@ void CheckAllSingles() //checks for any singles and marks them off!
 void CheckAll() //checks all rows, columns and boxes off. used once in the beginning. Ideally not reqd again.
 {
     DrawGrid();
-    
-    
+
+
     {
         //i(1,2,8);
 
-   /* {i(1,2,8);
->>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
-        i(1,7,2);
-        i(2,5,8);
-        i(2,6,4);
-        i(2,8,9);
-        i(3,3,6);
-        i(3,4,3);
-        i(3,5,2);
-        i(3,8,1);
-        i(4,2,9);
-        i(4,3,7);
-        i(4,8,8);
-        i(5,1,8);
-        i(5,4,9);
-        i(5,6,3);
-        i(5,9,2);
-        i(6,2,1);
-        i(6,7,9);
-        i(6,8,5);
-        i(7,2,7);
-        i(7,5,4);
-        i(7,6,5);
-        i(7,7,8);
-        i(8,2,3);
-        i(8,4,7);
-        i(8,5,1);
-        i(9,3,8);
+        /* {i(1,2,8);
+         >>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
+         i(1,7,2);
+         i(2,5,8);
+         i(2,6,4);
+         i(2,8,9);
+         i(3,3,6);
+         i(3,4,3);
+         i(3,5,2);
+         i(3,8,1);
+         i(4,2,9);
+         i(4,3,7);
+         i(4,8,8);
+         i(5,1,8);
+         i(5,4,9);
+         i(5,6,3);
+         i(5,9,2);
+         i(6,2,1);
+         i(6,7,9);
+         i(6,8,5);
+         i(7,2,7);
+         i(7,5,4);
+         i(7,6,5);
+         i(7,7,8);
+         i(8,2,3);
+         i(8,4,7);
+         i(8,5,1);
+         i(9,3,8);
 
-        i(9,8,4);
-        i(1,8,7);
-    } //creating a sample puzzle
-    
-=======
-        i(9,8,4);} //creating a sample puzzle
+         i(9,8,4);
+         i(1,8,7);
+         } //creating a sample puzzle
 
->>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
-    DrawGrid();
-    */ //Commented out cause getting from file
-    GetPuz();
-   CheckRow(7);
-    DrawGrid();
-    
-    CheckColumn(1);
-    DrawGrid();
-    
-    for(int i=1; i<=9; i++)
-    {
-        CheckRow(i);
-        CheckColumn(i);
-    }
-    
-    for(int i=0; i<9; i++)
-    {
-        for(int j=0; j<9; j++)
+         =======
+         i(9,8,4);} //creating a sample puzzle
+
+         >>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
+         DrawGrid();
+         */ //Commented out cause getting from file
+        GetPuz();
+        CheckRow(1);
+        DrawGrid();
+
+        CheckColumn(1);
+        DrawGrid();
+
+        for(int i=1; i<=9; i++)
         {
-            CheckBox(i, j);
+            CheckRow(i);
+            CheckColumn(i);
         }
+
+        for(int i=0; i<9; i++)
+        {
+            for(int j=0; j<9; j++)
+            {
+                CheckBox(i, j);
+            }
+        }
+
+
+        CheckAllSingles();
+
+
+
     }
-    
-    DrawGrid();
-    
-    CheckAllSingles();
-        
-
 }
-
 int main()
 {
     DrawGrid();
@@ -263,11 +303,13 @@ int main()
     {
         CheckAll();
         DrawGrid();
-        
-        for(int i=0; i<10; i++)
-        {
-            CheckAllSingles();
-            DrawGrid();
-        }
+
+        // for(int i=0; i<10; i++)
+        //{
+        //   CheckAllSingles();
+        //   DrawGrid();
+        //}
     }
+    HiddenSingles();
+    DrawGrid();
 }
