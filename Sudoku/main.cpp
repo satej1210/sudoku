@@ -46,12 +46,8 @@ public:
     {
         return state;
     }
-
+    
 }sudoku[9][9];
-
-
-
-
 
 class lockedcandidate
 {
@@ -146,21 +142,38 @@ public:
     void static both()
     {
       
-        
-       /* for(int i=0; i<9; i+=3)
+        for(int i=0; i<9; i+=3)
+        {
             for(int j=0; j<9; j+=3)
+            {
                 f11(i,j);
-        
-       // f12();*/
+                f12(i,j);
+            }
+        }
     }
     
 };
 
-
+bool PuzzleCompleted()
+{
+    
+   
+    
+    
+    for(int i=0; i<9; i++)
+    {
+        for(int j=0; j<9; j++)
+        {
+            if(sudoku[i][j].is_filled==false)
+                return false;
+        }
+    }
+    return true;
+}
 
 void GetPuz()//Reads the sudoku from a file
 {
-    fstream file("puzzle.txt");
+    fstream file("lc1.txt");
     char temp[10];
     int CurRow=0;
     if (!file) {
@@ -182,6 +195,7 @@ void GetPuz()//Reads the sudoku from a file
         CurRow++;
     }
 }
+
 void RowHiddenSingles(int i)
 {
     int no=0;
@@ -207,22 +221,24 @@ void RowHiddenSingles(int i)
         if (flag==1)
         {
             sudoku[i][no].ChangeState(j);
+            CheckRow(i+1);
+            CheckColumn(no+1);
+            CheckBox(i, no);
 
         }
     }
 
 
 }
+
 void HiddenSingles()
 {
     for (int i=0; i<9; i++)
     {
         RowHiddenSingles(i);
     }
-
-    // ColumnHiddenSingles();
-    // BoxHiddenSingles();
 }
+
 void DrawGrid()
 {
     cout<<" --- --- --- --- --- --- --- --- ---\n";
@@ -365,80 +381,9 @@ void CheckAllSingles() //checks for any singles and marks them off!
 
 bool* ReturnBoxPossibilities(int x, int i, int j)
 {
-
-    DrawGrid();
-
-
-    {
-        //i(1,2,8);
-
-        /* {i(1,2,8);
-         >>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
-         i(1,7,2);
-         i(2,5,8);
-         i(2,6,4);
-         i(2,8,9);
-         i(3,3,6);
-         i(3,4,3);
-         i(3,5,2);
-         i(3,8,1);
-         i(4,2,9);
-         i(4,3,7);
-         i(4,8,8);
-         i(5,1,8);
-         i(5,4,9);
-         i(5,6,3);
-         i(5,9,2);
-         i(6,2,1);
-         i(6,7,9);
-         i(6,8,5);
-         i(7,2,7);
-         i(7,5,4);
-         i(7,6,5);
-         i(7,7,8);
-         i(8,2,3);
-         i(8,4,7);
-         i(8,5,1);
-         i(9,3,8);
-
-         i(9,8,4);
-         i(1,8,7);
-         } //creating a sample puzzle
-
-         =======
-         i(9,8,4);} //creating a sample puzzle
-
-         >>>>>>> 45db928a32f7d2abe44a65a10fd7dbc31d4194fc
-         DrawGrid();
-         */ //Commented out cause getting from file
-        GetPuz();
-        CheckRow(1);
-        DrawGrid();
-
-        CheckColumn(1);
-        DrawGrid();
-
-        for(int i=1; i<=9; i++)
-        {
-            CheckRow(i);
-            CheckColumn(i);
-        }
-
-        for(int i=0; i<9; i++)
-        {
-            for(int j=0; j<9; j++)
-            {
-                CheckBox(i, j);
-            }
-        }
-
-
-        CheckAllSingles();
-
     bool PossibleNumberArray[9];
-    
     int counter=0;
-    
+
     for(int a=i; a<=i+2; a++)
     {
         for(int b=j; b<=j+2; b++)
@@ -451,19 +396,8 @@ bool* ReturnBoxPossibilities(int x, int i, int j)
             
         }
     }
-    
-    
-   /* for(int i=0; i<9; i++)
-    {
-        cout<<PossibleNumberArray+i;
-    }*/
-    
-    
     return PossibleNumberArray;
     
-}
-
-
 
     }
 
@@ -471,22 +405,19 @@ int main()
 {
     DrawGrid();
     GetPuz();
-    
+    CheckAll();
+    for(int i=0;i<5;i++)
     {
-        CheckAll();
+    if(PuzzleCompleted()==false)
+    {
+        CheckAllSingles();
+        lockedcandidate::both();
+        HiddenSingles();
         DrawGrid();
-
-        // for(int i=0; i<10; i++)
-        //{
-        //   CheckAllSingles();
-        //   DrawGrid();
-        //}
     }
-
-    HiddenSingles();
-
-    DrawGrid();
-    lockedcandidate::f11(6,3);
-
-    DrawGrid();
+        
+        lockedcandidate::both();
+    }
+    
+    
 }
